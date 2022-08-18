@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Day 10
+
+//   Definition for a binary tree node.
+struct TreeNode {
+      int val;
+      TreeNode *left;
+      TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+      TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+      TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+  };
+
+// Day_10
+class Solution {
+    void solve(TreeNode* root , vector<int> &ans){
+        if(!root) return ;
+        solve(root->left,ans);
+        ans.push_back(root->val);
+        solve(root->right,ans);
+    }
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        solve(root,ans);
+        return ans;
+    }
+};
+
+// There are three solutions to this problem.
+/*
+Iterative solution using stack: O(n) time and O(n) space;
+Recursive solution: O(n) time and O(n) space (function call stack);
+Morris traversal: O(n) time and O(1) space.*/
+
+vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> nodes;
+        stack<TreeNode*> todo;
+        while (root || !todo.empty()) {
+            while (root) {
+                todo.push(root);
+                root = root -> left;
+            }
+            root = todo.top();
+            todo.pop();
+            nodes.push_back(root -> val);
+            root = root -> right;
+        }
+        return nodes;
+    }
