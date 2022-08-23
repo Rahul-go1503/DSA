@@ -17,16 +17,16 @@ struct ListNode {
 };
 ListNode* deleteDuplicates(ListNode* head) {
     if(!head||!head->next) return head;
-    ListNode* curr =head;
-    ListNode* nxt =head->next;
-    while(nxt){
-        if(curr->val==nxt->val){
-            curr->next= nxt->next;
-            delete nxt;
-            nxt=curr->next;
+    ListNode* prev =head;
+    ListNode* curr =head->next;
+    while(curr){
+        if(curr->val==prev->val){
+            prev->next= curr->next;
+            delete curr;
+            curr=prev->next;
         }else{
             curr=curr->next;
-            nxt=nxt->next;
+            prev=prev->next;
         }
     }
     return head;        

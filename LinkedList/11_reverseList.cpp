@@ -15,6 +15,10 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
+
+    //          1-->2 -->3-->4-->5-->NULL
+    // NULL <--1  2<--3<--4<--5-->NULL
+    // NULL <--1<--2   3<--4<--5-->NULL
 ListNode* reverseList(ListNode* head) {
         ListNode* prev = NULL;
         ListNode* curr = head;
@@ -26,8 +30,13 @@ ListNode* reverseList(ListNode* head) {
         }
         return prev;
     }
+
+
+    // 1-->2 -->3-->4-->5
+    // 1-->2<--3<--4<--5
+    //     |--> NULL
 ListNode* reverseList(ListNode* head) {
-        if(!head || !head->next) return NULL;
+        if(!head || !head->next) return head;
         ListNode * node = reverseList(head->next);
         head->next->next = head;
         head->next =NULL;

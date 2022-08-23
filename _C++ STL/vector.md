@@ -46,4 +46,12 @@ lower_bound at position 3
 upper_bound at position 6
 
 
-eras
+erase : 
+while(A[0]==0) A.erase(A.begin());
+
+insert :
+A.insert(A.begin(),1);
+
+
+
+
