@@ -47,6 +47,8 @@ deletation
 1. curr node ko
 2. prev node ko
 3. next node ko
+reverse nodes
+
 
 *****
 A summary about how to solve Linked List problem, C++
@@ -56,3 +58,20 @@ https://leetcode.com/problems/add-two-numbers/discuss/1340/A-summary-about-how-t
 ListNode newNode; <- stack
 ListNode *newNode = new ListNode(); <- heap
 
+*****
+Merge two LinkList
+1. By changing two pointers at a time
+    head1>head2:
+    while(head2){
+        auto nxt = head1 -> next;
+        ptr -> next = head2;
+        head2 = head2 ->next;
+        head1 -> next -> next = nxt;
+        head1 = nxt;
+    }
+2. By changing only one at a time
+    for (p1 = head, p2 = head2; p1; ) {
+        auto t = p1->next;
+        p1 = p1->next = p2;
+        p2 = t;
+    }
