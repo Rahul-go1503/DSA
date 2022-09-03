@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 void read1(map<int,int> &m){
     for(int i=0;i<10;i++){
         m[i]=i+1;
@@ -49,3 +46,5 @@ int main(){
 
 
 }
+
+find:

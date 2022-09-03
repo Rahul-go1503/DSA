@@ -9,6 +9,8 @@ Notes :
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// give next to peak element
 int findPeakIndex(vector<int> &nums) {
     int s= 0;
     int e= nums.size()-1;
@@ -38,7 +40,7 @@ int binarySearch(vector<int> & nums ,int s ,int e,int target){
     }
         return -1;
 }
-    int search(vector<int>& nums, int target) {
+int search(vector<int>& nums, int target) {
     int peakIndex = findPeakIndex(nums);
     cout<<"peak "<<peakIndex<<endl;
     int s,e;

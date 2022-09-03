@@ -17,6 +17,6 @@ int n = sizeof(arr)/sizeof(int);
 using namespace std;
 
 int count[3] = {0, 0, 0}; // Initialize count of '0', '1' and '2' as 0
-int main()
-{
-}
+
+
+*****
