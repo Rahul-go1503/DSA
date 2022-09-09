@@ -16,6 +16,11 @@
 > no swap
 
 # Merge Sort :
+> T.C - O(nLogn) in all 3 cases (worst, average and best) as merge sort always divides the array into two halves and takes linear time to merge two halves.
+> Auxiliary Space: O(n)
+> Algorithmic Paradigm: Divide and Conquer
+> Sorting In Place: No in a typical implementation
+> Stable: Yes
 
 # Quick Sort :
 > https://www.geeksforgeeks.org/quick-sort/

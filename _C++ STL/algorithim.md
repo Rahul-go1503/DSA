@@ -1,0 +1,4 @@
+# stable_partition
+    vector<int> v{ 6, 9, 0, 1, 2, 7, 5, 8, 0 };
+	stable_partition(v.begin(), v.end(), [](int n) {return n>4; });
+

@@ -3,7 +3,10 @@
 Question :
 
 
-Notes :
+Time Complexity: O(KlogK)
+Space Complexity: O(K)
+
+Where 'N' is the total number of elements in the array.
 
 **********************************************************************************************/
 #include <bits/stdc++.h>

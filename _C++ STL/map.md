@@ -47,4 +47,13 @@ int main(){
 
 }
 
-find:
+# unordered_map
+
+>count : count the no of keys present in map
+Parameters: This function accepts a single parameter key which is needed to be checked in the given unordered_map container.
+Return Value: This function returns 1(coz map store distinct values) if there exists a value in the map with the given key, otherwise it returns 0.
+
+>find:
+Parameters: It takes the key as a parameter.
+
+Return values: If the given key exists in unordered_map it returns an iterator to that element otherwise it returns the end of the map iterator.

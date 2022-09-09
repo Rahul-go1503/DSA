@@ -21,12 +21,13 @@ using namespace std;
 class Solution {
 public:
     // Array Kadane's Algorithm
-    int maxSubArray(vector<int>& nums) {
-        int mx = INT_MIN;
-        int sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum = max(sum+nums[i],nums[i]);
+    // Kadane’s Algorithm can be viewed both as greedy and DP
+    int maxSubArray(vector<int>& arr) {
+        int mx = INT_MIN,sum =0,n=arr.size();
+        for(int i=0;i<n;i++){
+            sum+= arr[i];
             mx = max(mx,sum);
+            if(sum<0) sum=0;
         }
         return mx;
     }

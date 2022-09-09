@@ -19,15 +19,24 @@ int main(){
     int n=10;
     read(v,n);
     print(v);
+}
 
 
-find :
+>find :
     auto itr = find(v.begin(),v.end(),value_to_find);
 
 
-iterators to index :
+>iterators to index :
     itr - v.begin();
-}
+- only in vectors
+
+>front :
+>back :
+-If the vector container is empty, it causes undefined behavior. 
+
+>Difference between front(), back() and begin, end() function
+
+begin() and end() function return an iterator(like a pointer) initialized to the first or the last element of the container that can be used to iterate through the collection, while front() and back() function just return a reference to the first or the last element of the container.
 
 
 upper_bound :
@@ -46,8 +55,16 @@ lower_bound at position 3
 upper_bound at position 6
 
 
-erase : 
-while(A[0]==0) A.erase(A.begin());
+>erase : 
+    while(A[0]==0) A.erase(A.begin());
+    1. vectorname.erase(position)
+    2. vectorname.erase(startingposition, endingposition)
+    Parameters :
+    Position of the element to be removed in the form of iterator.
+    or the range specified using start and end iterator.
+    Result :
+    Elements are removed from the specified
+    position of the container.
 
 insert :
 A.insert(A.begin(),1);
