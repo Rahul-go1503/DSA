@@ -25,6 +25,7 @@ int add ( int a ,int b){
 }
 int mul (int a , int b){
     return ((a%mod)*1LL*(b%mod))%mod;
+    // return a%mod*1LL*(b%mod)%mod;
 }
 int numberOfWays2(int n, int k) {
     int prev2 = k;

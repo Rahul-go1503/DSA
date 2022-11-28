@@ -4,6 +4,9 @@ Question : House Robber II
 
 
 Notes :
+1. circular problem
+2. None of the selected n elements could be neighbor to each others.
+3. dp[i] indicates dp[no of houses robbed] ??
 
 **********************************************************************************************/
 #include <bits/stdc++.h>

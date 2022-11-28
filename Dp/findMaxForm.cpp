@@ -4,7 +4,7 @@ Question : 474. Ones and Zeroes
 
 
 Notes :
-
+not solveds
 **********************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;

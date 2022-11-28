@@ -9,14 +9,14 @@ Notes :
 
 **********************************************************************************************/
 /*
-	Time Complexity: O()
+	Time Complexity: O(2^n)
 	Space Complexity: O()
 */
 
 void subsequences(string str,string sub , vector<string> &ans, int idx= 0 ){
-    if(!sub.empty()) ans.push_back(sub);
+    if(!sub.empty()) ans.push_back(sub);    // not taken
     for(int i = idx;i<str.length();i++){
-        subsequences(str,sub+str[i],ans,i+1);
+        subsequences(str,sub+str[i],ans,i+1); // taken
     }
 }
 vector<string> subsequences(string str){

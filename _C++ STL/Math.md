@@ -18,3 +18,15 @@ Modulo Arthmetics:
 
 *****
 Operators:
+
+
+
+*****
+Combinations:
+$(nCn_2= 2*(n-1)Cn_2)$
+C(n,k) = C(n, k-1) * (n - k + 1) / k;
+*****
+Prime No - jo 1 or khud ke alwa kisi se bhi divide na ho
+> Sieve of Eratosthenes :
+
+> Pascal's triangle

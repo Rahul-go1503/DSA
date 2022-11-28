@@ -69,6 +69,10 @@ upper_bound at position 6
 insert :
 A.insert(A.begin(),1);
 
+> Allocate memory for the returned vector is potentially better than keeping push_back.
+ initially a vector has a size of 1 everytime we pushback and the vector runs out of space it creates a new vector of double the previous size and copies all the previous elements to it and pushes the new element to the new vector this is very expensive so its better to preallocate memory to vector whenever possible
+
+
 
 
 

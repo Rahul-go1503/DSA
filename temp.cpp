@@ -4,12 +4,6 @@ using namespace std;
 
 Question :
 
-
-Notes :
-
 **********************************************************************************************/
-/*
-	Time Complexity: O()
-	Space Complexity: O()
-*/
 
+// TC - O(), SC - O()

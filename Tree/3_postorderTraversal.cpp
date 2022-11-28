@@ -18,8 +18,8 @@ class Solution {
     void solve(TreeNode* root , vector<int> &ans){
         if(!root) return ;
         solve(root->left,ans);
-        ans.push_back(root->val);
         solve(root->right,ans);
+        ans.push_back(root->val);
     }
 public:
     vector<int> postorderTraversal(TreeNode* root) {
@@ -32,27 +32,29 @@ public:
         vector<int> ans;
         stack<TreeNode*> s;
         while(root || !s.empty()){
-            while (root)
-            {
-            s.push(root);
-            root=root->left;  
+            while (root){
+                s.push(root);
+                root=root->left;  
             }
+
             root = s.top();
+
             if(!root->right){
-            ans.push_back(root->val);
-            s.pop();
-            root = s.top();
-            ans.push_back(root->val);
-            s.pop();
+                ans.push_back(root->val);
+                s.pop();
+                root = s.top();
+                ans.push_back(root->val);
+                s.pop();
             }else{
-            root = s.top();
-            root=root->right;
-            } 
+                root = s.top();
+                root=root->right;
+            }
+ 
             if(root && !root->left && !root->right){
-            ans.push_back(root->val);
+                ans.push_back(root->val);
             }else{
-            root = s.top();
-            ans.push_back(root->val);
+                root = s.top();
+                ans.push_back(root->val);
             }
         }
         return ans;

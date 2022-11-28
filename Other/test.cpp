@@ -30,5 +30,11 @@ int main()
     string s;
     s.push_back(1+'0');
     s.push_back('0'+2);
-    cout<<s<<endl;
+    cout<<s<<endl; // 12
+    cout<<'a'-'a'<<endl; // 0
+    cout<<'2'-'1'<<endl; // 1
+    cout<<'2'+'1'<<endl; // 99
+    cout<<int('0')<<endl; // 48
+    int f  = '2'>'1' ? 1 : 0;
+    cout<<f<<endl; // 1
 }

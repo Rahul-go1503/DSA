@@ -16,6 +16,7 @@ Notes :
 #include <bits/stdc++.h>
 using namespace std;
 
+// one rotation , O(N),O(1);
 void rotate(int arr[], int n)
 {
     int temp = arr[n-1];

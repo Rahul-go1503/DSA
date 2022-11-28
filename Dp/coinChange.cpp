@@ -1,10 +1,11 @@
 /*********************************************************************************************
 
-Question : 322. Coin Change
+Question : 322. Coin Change -- Standard problem
 Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
 Notes :
 Love babbar adobe test , amazon me
+1D dp 
 **********************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
@@ -17,7 +18,7 @@ class Solution {
         for(int i=0;i<coins.size();i++){
             int temp = solveRec(coins,amount-coins[i]);
             if(temp!=INT_MAX)
-                ans=min(ans,temp);
+                ans=min(ans,1+temp);
         }
         return ans;
     }
@@ -51,4 +52,22 @@ public:
         int ans = solveMem(coins,amount,dp);
         return ans==INT_MAX? -1: ans;
     }
+};
+
+// self try wrong approach
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int n = coins.size();
+        sort(coins.begin(),coins.end());
+        int ans = 0;
+        for(int i=n-1;i>=0 && amount>=0;i--){
+            ans+=amount/coins[i];
+            amount = amount%coins[i];
+        }
+        return amount>0?-1:ans;
+    }
+    // check this case
+    //[186,419,83,408]
+    // 6249
 };

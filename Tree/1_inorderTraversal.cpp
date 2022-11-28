@@ -37,16 +37,45 @@ Morris traversal: O(n) time and O(1) space.*/
 
 vector<int> inorderTraversal(TreeNode* root) {
         vector<int> nodes;
-        stack<TreeNode*> todo;
-        while (root || !todo.empty()) {
+        stack<TreeNode*> st;
+        while (root || !st.empty()) {
             while (root) {
-                todo.push(root);
+                st.push(root);
                 root = root -> left;
             }
-            root = todo.top();
-            todo.pop();
+            root = st.top();
+            st.pop();
             nodes.push_back(root -> val);
             root = root -> right;
         }
         return nodes;
     }
+
+// Morris traversal
+
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> nodes;
+        while (root) {
+            if (root -> left) {
+                TreeNode* pre = root -> left;
+                while (pre -> right && pre -> right != root) {
+                    pre = pre -> right;
+                }
+                if (!pre -> right) {
+                    pre -> right = root;
+                    root = root -> left;
+                } else {
+                    pre -> right = NULL;
+                    nodes.push_back(root -> val);
+                    root = root -> right;
+                }
+            } else {
+                nodes.push_back(root -> val);
+                root = root -> right;
+            }
+        }
+        return nodes;
+    }
+};
