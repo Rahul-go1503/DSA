@@ -9,6 +9,7 @@ Notes :
 #include <bits/stdc++.h>
 using namespace std;
 
+// by values only har ek node par jakr check krna pdega
 struct TreeNode {
     int val;
     TreeNode *left;

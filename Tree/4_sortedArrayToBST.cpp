@@ -4,10 +4,6 @@ Question :
 
 
 Notes :
-The question can be solved by small modification to program of Height of tree.
-The idea is quite simple. Max value of Height(leftSubtree)+Height(rightSubtree) (at any node ) is the diameter. Keep track of maxium diameter duing traversal and find the height of the tree.
-
-d=max(d,ld+rd); => This line maintains the max diameter.
 **********************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
