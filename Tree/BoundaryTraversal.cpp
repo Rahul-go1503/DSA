@@ -13,7 +13,7 @@ struct Node {
 
 class Solution {
     void leftNodes(Node* root,vector<int> &ans){
-        if(!root) return ; // ek bar hi condn true ho skti hai start me hi;
+        if(!root) return ; // ek bar hi condn true ho skti hai start me hi~ wrong jab bhi end aayega hoga;
         
         // left nhi hai to hi right me ja rhe hai
         if(root->left){
@@ -24,6 +24,7 @@ class Solution {
             leftNodes(root->right,ans);
             
         }
+        // agar dono nhi hai to kuch nhi krna
     }
     void leafNodes(Node*root,vector<int>&ans){
         if(!root) return;
