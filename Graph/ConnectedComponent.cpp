@@ -20,7 +20,7 @@ void  dfsForCC(int vertex , vector<int> & visited , vector<pair<int,int>> adjLis
 
 int connectedComponents(vector<int> & visited , vector<pair<int,int>> adjList[]){
     int cnt = 0 ;
-    int n = adjList->size(); // exp??
+    int n = (*adjList).size(); // exp?? sorted :-)
     vector<vector<int>> cc; // store all connected components
     for(int i =0; i<n;i++){
         if(visited[i]) continue;

@@ -13,6 +13,7 @@ void DFS (int node,vector<set<int>> &adj,vector<bool> &vis,vector<int> & ans){
 }
 vector<vector<int>> depthFirstSearch(int V, int E, vector<vector<int>> &edges)
 {
+    // vector of sets
     vector<set<int>> adj(V);
     for(int i=0;i<E;i++){
         int u = edges[i][0];

@@ -19,7 +19,7 @@ vector<int> Solve(int node,vector<int> &bfs,vector<bool> &visited,set<int> adj[]
     return bfs;
 }
 vector<int> BFS(int vertex, vector<pair<int, int>> edges){
-    set<int> adj[vertex];
+    set<int> adj[vertex];  // arrray of sets sorted order me values insert hogi 1--> 3,4,5
     for(auto edge : edges){
         adj[edge.first].insert(edge.second);
         adj[edge.second].insert(edge.first);
