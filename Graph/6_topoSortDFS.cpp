@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// DOUBT - from which node we should start dfs
+// DOUBT - from which node we should start dfs - kisi se bhi kr lo shi hi aayega... kya hi doubt tha Sorted !
 class Solution
 {
     void dfs(int u, vector<int> adj[], vector<int> &vis, stack<int> &s)
