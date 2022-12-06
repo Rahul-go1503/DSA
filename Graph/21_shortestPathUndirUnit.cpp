@@ -11,7 +11,7 @@ class Solution {
         }
         
         queue<int> q;
-        vector<int> vis(n);
+        vector<int> vis(n); // no need of vis can use dis array itself
         q.push(src);
         
         vector<int> dis(n,INT_MAX);

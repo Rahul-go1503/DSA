@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+whenever there is unweighted graph bfs give shortesh distance 
+Your 1st encounter with any node is simply its shortest path = lvl
+*/
 vector<int> Solve(int node,vector<int> &bfs,vector<bool> &visited,set<int> adj[])
 {
     queue<int> q;
