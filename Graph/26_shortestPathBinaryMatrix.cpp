@@ -3,7 +3,12 @@ using namespace std;
 
 // simple BFS searching the path to last node 
 // unweighted graph
-// O(V2) => V = n2 = 10000 => 10^8 => TLE ?? think about it
+// O(mn^2) => V = N^2 = (10000)^2 => 10^8 => TLE ?? think about it
+// TLE nhi aayega kyuki ek node par at most 1 baar hi ja rhe hai grid[i][j] = 1; so => O(n*n)= 100 *100;
+// and bfs me jese hi que me push kro tbhi vis true kr dena chaiye taki usi ka koi sibling bhi use fir se touch na kr pay
+// otherwise ek hi node multi times que me push hoga = > TLE
+
+// 2D BFS 
 class Solution {
 public:
     int shortestPathBinaryMatrix(vector<vector<int>>& grid) {

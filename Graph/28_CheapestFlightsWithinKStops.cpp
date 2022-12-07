@@ -2,7 +2,8 @@
 using namespace std;
 
 /*
-PQ(1st para price) se solve nhi kr skte kyuki vo price ke base par calculate krega eq. agar baad me kisi node par hum jate hai jiski value phele
+PQ(1st para price) se solve nhi kr skte kyuki vo price ke base par calculate krega eq. agar baad me kisi node 
+par hum jate hai jiski value phele
 ab wale se jyada hai to vo que me push nhi krega but vo soln ho skta hai(k value kam hai to)
 
 PQ(1st para k) esa krne ka koi fayda nhi hai kyuki k +1 se increase ho rhe hai so simple BFS traversal kr skte hai
