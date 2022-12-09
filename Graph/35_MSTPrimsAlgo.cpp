@@ -27,6 +27,7 @@ class Solution
             int u = pq.top()[1];
             pq.pop();
             
+            // ek hi node 2 baar pq me ho skti hai diff diff wt ke sath to baad me jo rep nodes aayegi unhe ignore krna hai
             if(vis[u]) continue;
             vis[u] = 1;
             
@@ -35,6 +36,7 @@ class Solution
             for(auto &p : adj[u]){
                 int v = p[0];
                 int wt = p[1];
+                // jo final ho gyi hai unhe ignore
                 if(vis[v]) continue;
                 pq.push({wt,v});
             }

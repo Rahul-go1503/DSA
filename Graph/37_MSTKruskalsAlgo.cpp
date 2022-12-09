@@ -30,6 +30,8 @@ class Solution
 {
 	public:
 	//Function to find sum of weights of edges of the Minimum Spanning Tree.
+
+    // edges ko sort krke union kro agar u and v me union hua to wt add kro
     int spanningTree(int V, vector<vector<int>> adj[])
     {
         vector<vi> edges;
@@ -50,6 +52,8 @@ class Solution
             int v = edges[i][2];
             int wt = edges[i][0];
             
+            // although unionBySize fun similar par ke liye check krta hai lekin ye nhi btata ki vo sim the isliye return kra
+            // can modify 
             if(ds.findUPar(u) != ds.findUPar(v)){
                 ds.unionBySize(u,v);
                 mstWt += wt;
