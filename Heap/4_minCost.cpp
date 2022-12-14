@@ -17,12 +17,13 @@ class Solution
         long long int ans=0;
         priority_queue<long long, vector<long long>,greater<long long>> pq;
         for(int i=0;i<n;i++) pq.push(arr[i]);
-        while(pq.size()>1){
+        while(pq.size()){
             long long int a = pq.top();
             pq.pop();
             long long int b = pq.top();
             pq.pop();
             ans+=a+b;
+            // as a new rope will form at this point
             pq.push(a+b);
         }
         return ans;
