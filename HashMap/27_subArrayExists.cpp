@@ -6,7 +6,9 @@ Question :
 
 
 Notes :
-
+- subarray sum ---> Prefix sum
+- tarsum = prefix[j] - prefix[i];
+- tar == 0 => p[j]==p[i]; 
 **********************************************************************************************/
 /*
 	Time Complexity: O(N)

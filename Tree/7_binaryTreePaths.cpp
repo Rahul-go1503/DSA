@@ -4,10 +4,6 @@ Question :
 
 
 Notes :
-The question can be solved by small modification to program of Height of tree.
-The idea is quite simple. Max value of Height(leftSubtree)+Height(rightSubtree) (at any node ) is the diameter. Keep track of maxium diameter duing traversal and find the height of the tree.
-
-d=max(d,ld+rd); => This line maintains the max diameter.
 **********************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
@@ -36,6 +32,26 @@ public:
         vector<string> ans;
         string path = to_string(root->val);
         solve(root,ans,path);
+        return ans;
+    }
+};
+
+class Solution {
+    //have to check whether right or wrong
+public:
+    void solve(TreeNode* root,vector<string> &ans,string path){
+        path+="->"+to_string(root->val);
+        if(!root->left&&!root->right){
+            ans.push_back(path);
+        }
+        if(root->left) solve(root->left,ans,path);
+        if(root->right) solve(root->right,ans,path);
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string> ans;
+        string path = to_string(root->val);
+        if(root->left) solve(root->left,ans,path);
+        if(root->right) solve(root->right,ans,path);
         return ans;
     }
 };

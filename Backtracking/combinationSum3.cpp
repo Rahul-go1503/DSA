@@ -25,7 +25,7 @@ class Solution {
             return;
         }
         if(k==0 || n==0) return;
-        for(int i=val;i<=9&&i<=n;i++){
+        for(int i=val;i<=9 && i<=n;i++){
             temp.push_back(i);
             solve(k-1,n-i,i+1,ans,temp);
             temp.pop_back();

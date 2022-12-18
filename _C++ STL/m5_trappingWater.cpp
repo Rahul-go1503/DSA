@@ -24,6 +24,7 @@ class Solution{
         int* right = new int[n];
         left[0]=-1; right[n-1]=-1;
         for(int i=1;i<n;i++){
+            // can optimize left[i] only depends on left[i-1];
             left[i] = max(left[i-1],arr[i-1]);
             right[n-i-1] = max(right[n-i],arr[n-i]);
         }
@@ -53,15 +54,19 @@ class Solution{
         long long mL = 0 , mR = 0; // longest left and right bars
         
         while(l <= r){
+            // jab right me curr block height se jyada height ka block ho
             if(arr[l] <= arr[r]){
+                // agar ml se bda hai to ml ko update kro
                 if(arr[l] >= mL){
                     mL = arr[l];
                 }
+                // means water ml or arr[r] ke bich store ho skta hai
                 else{
                     res += mL - arr[l];
                 }
                 l++;
             }
+            // jab right wala left wale se chhota ho
             else {
                 if(arr[r] >= mR){
                     mR = arr[r];

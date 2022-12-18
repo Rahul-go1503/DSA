@@ -1,12 +1,6 @@
-//{ Driver Code Starts
-// Initial Template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
-
-// } Driver Code Ends
-// User function Template for C++
-
+// we cans solve by backtrack onlt is n is small else it is a dp question( 0/1 knapsack)
 class Solution{
     int solve(int i, int n, int *arr,int sum,int total){
         if(i==n && sum==total){
@@ -30,25 +24,21 @@ public:
         return solve(0,N,arr,0,sum/2);
     }
 };
-
-//{ Driver Code Starts.
-
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        int N;
-        cin>>N;
-        int arr[N];
-        for(int i = 0;i < N;i++)
-            cin>>arr[i];
-        
-        Solution ob;
-        if(ob.equalPartition(N, arr))
-            cout<<"YES\n";
-        else
-            cout<<"NO\n";
+// getting tle on leetcode .. excepeted on gfg (:
+class Solution {
+    bool solve(int i, int tar, vector<int> &nums){
+        if(tar == 0) return true;
+        int n = nums.size();
+        if(i>=n || tar < 0) return false;
+        return solve(i+1, tar, nums) || solve(i+1, tar - nums[i], nums);
     }
-    return 0;
-}
-// } Driver Code Ends
+public:
+    bool canPartition(vector<int>& nums) {
+        int totSum = accumulate(nums.begin(),nums.end(),0);
+        if(totSum%2) return false;
+        // sort(nums.begin(),nums.end());
+        return solve(0,totSum/2,nums);
+    }
+};
+// read dp solution
+// https://leetcode.com/problems/partition-equal-subset-sum/solutions/1624939/c-python-5-simple-solutions-w-explanation-optimization-from-brute-force-to-dp-to-bitmask/

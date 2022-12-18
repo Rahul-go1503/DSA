@@ -14,7 +14,7 @@ Notes :
 	Where 'N' is the total number of elements in the array.
 */
 
-
+// here is mapping is more important thing to be focused on;
 #include <bits/stdc++.h>
 using namespace std;
 

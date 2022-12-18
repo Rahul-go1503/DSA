@@ -4,7 +4,10 @@ Question :
 
 
 Notes :
+Reading the question we understand that we need every possible unique combination such that sum of the 
+combination is equal to target.
 
+For such questions where we have to find "every possible" we generally use backtracking.
 **********************************************************************************************/
 
 /*

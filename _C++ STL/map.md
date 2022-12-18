@@ -7,13 +7,9 @@ void read2(map<int,int> &m){
     cout<<" NOT good \n";
     auto itr = m.begin();
     for(int i=0;i<10;i++){
-        // itr++->first=i;  ERROR
-        itr++->second=i+1;
+        // itr++->first=i;  ERROR - Can't update key?
+        itr++->second=i+1; // Can update value
     }
-}
-void read3(map<int,int> &m){
-    cout<<" NOT good \n";
-    auto itr = m.begin();
 }
 
 void print1(map<int,int> &m){

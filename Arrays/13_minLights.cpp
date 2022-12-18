@@ -14,7 +14,7 @@ Notes :
 	Where 'N' is the total number of elements in the array.
 */
 
-
+// NOT solved -- IntriewBit - easy tag idk why easy, it seems to be hard for me :(
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -44,4 +44,19 @@ int solve(vector<int> &A, int B) {
 int main(){
     vector<int> a = {0, 0, 0, 1, 0};
     cout<<solve(a,3)<<endl;
+}
+
+int solve(vector<int> &A, int B){
+    int n = A.size();
+    int s = 0, i = B-1, cnt = 0;
+    while(i>=s && i<n){
+        if(A[i]==1){
+            cnt++;
+            s = i;
+            i = s + B; 
+        }else{
+            i--;
+        }
+    }
+    return i == n ? cnt : -1;
 }

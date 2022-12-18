@@ -18,6 +18,28 @@ Notes :
 #include <bits/stdc++.h>
 using namespace std;
 
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        int n= digits.size();
+        int i = n-1;
+        while(i>=0){
+            if(digits[i]<9){
+                digits[i]++;
+                return digits;
+            }
+            // if 9 make it 0
+            digits[i--]=0;
+        }
+        // 00000
+        // means we have to add 1 in begining
+        digits.push_back(0);
+        digits[0] = 1;
+        return digits;
+    }
+};
+
+
 vector<int> plusOne(vector<int> &A) {
     int n = A.size();
     vector<int> ans;

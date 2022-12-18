@@ -23,6 +23,7 @@ public:
                     if(nums[s]+nums[e]+0LL+ nums[i]+nums[j]==tar){
                         ans.push_back({nums[i],nums[j],nums[s],nums[e]});
                         s++;
+                        e--;
                         while(s<e && nums[s]==nums[s-1]) s++;
                         while(s<e && nums[e]==nums[e-1]) e--;
                     }if(nums[i]+nums[j]+ 0LL +nums[s]+nums[e]>tar){

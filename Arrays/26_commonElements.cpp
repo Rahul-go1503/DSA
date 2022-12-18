@@ -43,7 +43,9 @@ class Solution
                 if(A[i]==B[j] && A[i]==C[k]){
                     if(res.empty() || A[i]!=res.back())res.push_back(A[i]);
                     i++;j++;k++;
-                }else if(A[i]<B[j]) i++;
+                }
+                // it is working bcoz unless A[i] == B[i] we can safely move forward i when they become equal then we consider 2nd case
+                else if(A[i]<B[j]) i++;
                 else if(B[j]<C[k]) j++;
                 else k++;
             }

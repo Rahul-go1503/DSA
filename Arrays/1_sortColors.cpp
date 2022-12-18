@@ -56,6 +56,8 @@ void sortColors(vector<int>& nums) {
 }
 void sortColors(int A[], int n) {
         int i = 0, j = n-1;
+        // i = zero se ek aage rhega, j = 2 se ek piche rhega
+        // k dekhega ki zero hai to i se swap kr do or 2 hai to j se or ek hai to aage bd jao
         for(int k=0; k<=j; )
         {
         	if(A[k]==0)  swap(A[i++], A[k++]);
@@ -107,23 +109,13 @@ void sortColors(int A[], int n) {
 }
 
 // one pass in place solution
+// MY Fav
 void sortColors(int A[], int n) {
-    int j = 0, k = n - 1;
-    for (int i = 0; i <= k; ++i){
-        if (A[i] == 0 && i != j)
-            swap(A[i--], A[j++]);
-        else if (A[i] == 2 && i != k)
-            swap(A[i--], A[k--]);
-    }
-}
-
-// one pass in place solution
-void sortColors(int A[], int n) {
-    int j = 0, k = n-1;
-    for (int i=0; i <= k; i++) {
-        if (A[i] == 0)
-            swap(A[i], A[j++]);
-        else if (A[i] == 2)
-            swap(A[i--], A[k--]);
+    int i = 0, k = n - 1;
+    for (int j = 0; j <= k; ++j){
+        if (A[j] == 0 && j != i)
+            swap(A[j--], A[i++]);
+        else if (A[j] == 2 && j != k)
+            swap(A[j--], A[k--]);
     }
 }

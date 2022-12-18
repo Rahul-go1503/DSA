@@ -8,7 +8,7 @@ You can just replace "stack" with "vector" and it'll work perfectly since vector
 **********************************************************************************************/
 #include <bits/stdc++.h>
 using namespace std;
-
+// i think not solved!
 class MinStack {
     int *arr;
     int peak;

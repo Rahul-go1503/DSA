@@ -1,5 +1,21 @@
 #include <bits/stdc++.h> 
 using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int tar) {
+        unordered_map<int,int> mp;
+        for(int i=0; i<nums.size();i++){
+            auto itr = mp.find(tar-nums[i]);
+            if(itr!= mp.end()){
+                return {itr->second,i};
+            }else mp[nums[i]] = i;
+        }
+        return {};
+    }
+};
+
+
 vector<pair<int,int>> twoSum(vector<int>& arr, int target, int n)
 {
     sort(arr.begin(),arr.end());

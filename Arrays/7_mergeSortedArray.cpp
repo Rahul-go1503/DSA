@@ -1,5 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
+/*
+Merge two sorted array
+start from back
+size of nums1 = m+n; given 
+*/
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {

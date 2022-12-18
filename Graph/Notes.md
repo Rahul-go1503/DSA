@@ -20,4 +20,10 @@ A graph is disconnected if at least two vertices of the graph are not connected 
 A Directed Acyclic Graph (DAG) is a directed graph that contains no cycles.
 Topological Sorting of DAG is a linear ordering of vertices such that for every directed edge from vertex ‘u’ to vertex ‘v’, vertex ‘u’ comes before ‘v’ in the ordering. Topological Sorting for a graph is not possible if the graph is not a DAG.
 Note that there are multiple topological sortings possible for a DAG.
+
+> A DAG G has at least one vertex with in-degree 0 and one vertex with out-degree 0. 
+
+A graph is bipartite if the nodes can be partitioned into two independent sets A and B such that every edge in the graph connects a node in set A and a node in set B.
+
+> self edges , parallel edges , self loop, 
 <!-- **********************************************************************************************/ -->

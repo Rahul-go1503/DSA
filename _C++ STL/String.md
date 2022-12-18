@@ -22,4 +22,48 @@
     str.erase(str.begin() + 4); // return next itr last del kra to end
 
 >5.  Deletes all characters [first , Last)
-	str.erase(str.begin() + 0, str.end() - 1);
+	str.erase(str.begin() + 0, str.end() - 1); 
+
+
+# substring - 
+https://www.geeksforgeeks.org/substring-in-cpp/
+>1. substr -
+It generates a new string with its value initialized to a copy of a sub-string of this object.
+[pos, pos+len).
+
+Syntax - string substr(int pos, int len);
+TC - O(N);
+
+***
+to_string() - number to string
+
+> string to number
+- We are not allowed to perform type casting because int and string both are not in the same Object hierarchy.
+https://www.geeksforgeeks.org/converting-strings-numbers-c-cpp/
+
+#include <sstream>
+int main()
+{
+	string s = "12345";
+
+	// object from the class stringstream
+	stringstream geek(s);
+
+	// The object has the value 12345 and stream
+	// it to the integer x
+	int x = 0;
+	geek >> x;
+
+	// Now the variable x holds the value 12345
+	cout << "Value of x : " << x;
+
+	return 0;
+}
+
+1. int stoi(string s,int pos, int base);
+2. int atoi(char* s);
+3. float atof(char* s);
+
+> StringStream
+https://www.geeksforgeeks.org/stringstream-c-applications/
+https://www.simplilearn.com/tutorials/cpp-tutorial/string-stream-in-cpp

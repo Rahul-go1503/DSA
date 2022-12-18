@@ -12,7 +12,9 @@ Notes :
 	Space Complexity: O(1)
 */
 
-
+// once go through the graph based solution mention in leetcode official soln and BST also
+// https://leetcode.com/problems/merge-intervals/solutions/355318/fully-explained-and-clean-interval-tree-for-facebook-follow-up-no-sorting/?orderBy=most_votes
+// Interval tree
 #include <bits/stdc++.h>
 using namespace std;
 

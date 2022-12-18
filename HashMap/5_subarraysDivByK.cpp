@@ -10,13 +10,15 @@ I am already going to assume that you know about prefix sums before you read thi
 We can all agree that for an array int[] A, where N = len(A), that there are N prefix sums.
 prefix[0] = A[0], prefix[1] = A[0] + A[1], ... prefix[i] = A[0] + ... + A[i].
 
-Then to calculate how many subarrays are divisible by K is logically equivalent to saying, how many ways can we pair up all prefix sum pairs (i,j) where i < j
+Then to calculate how many subarrays are divisible by K is logically equivalent to saying, how many ways can we pair up
+ all prefix sum pairs (i,j) where i < j
 such that (prefix[j] - prefix[i]) % K == 0.
 
 Just from that information alone we easily get a O(n^2) solution.
 Compute all prefix sums, then check all pair to see if k divides the difference between them.
 
-However, if we just exploit some information w.r.t to the remainder of each prefix sum we can manipulate this into a linear algorithm. Here's how.
+However, if we just exploit some information w.r.t to the remainder of each prefix sum we can manipulate this into a linear algorithm.
+ Here's how.
 
 Number Theory Part
 I noted above that we need to find all prefix sum pairs (i,j) such tha (p[j] - p[i]) % K == 0.
@@ -32,7 +34,8 @@ Then p[j] - p[i] = (b*K + r0) - (a*K + r1)
 Again: p[j] - p[i] = K*(b-a) + (r0-r1), in other words
 K only divides p[j] - p[i] iff r0-r1 = 0 <-> r0 = r1 QED
 
-But we should not forget about elements in the array that do not need a pairing, namely those that are are divisible by K. That's why I add mod[0] at the end.
+But we should not forget about elements in the array that do not need a pairing, namely those that are are divisible by K.
+ That's why I add mod[0] at the end.
 
 Also counting pairs => N choose 2 = > n*(n-1) / 2
 **********************************************************************************************/
@@ -44,7 +47,9 @@ using namespace std;
 
 /*
 freq[0]=1 EXPLANATION
-Consider this case. It's my first time meeting a remainder that equals zero. But wait, doesn't that mean that my subarray's sum is Divisible by K? If freq[0]!=1 then my counter wouldn't increment the first time I met a remainder=0. Therefore I need freq[0]=1 in order for my counter to consider the first subarray with a remainder that equals to zero.
+Consider this case. It's my first time meeting a remainder that equals zero. But wait, doesn't that mean that my 
+subarray's sum is Divisible by K? If freq[0]!=1 then my counter wouldn't increment the first time I met a remainder=0.
+ Therefore I need freq[0]=1 in order for my counter to consider the first subarray with a remainder that equals to zero.
 */
 
 class Solution {
@@ -53,14 +58,27 @@ class Solution {
         // freq arrray init by 0
         vector<int> freq(K); //  number that I need to increment my counter with is the frequency of the remainder at its previous step.
         freq[0] = 1; 
-        int prefix = 0, res = 0;
+        int prefixRem = 0, res = 0;
         for (int a : A) {
-            prefix = (prefix + a % K + K) % K;
-            res += freq[prefix]++;
+            prefixRem = (prefixRem + a % K + K) % K;
+            res += freq[prefixRem]++;
         }
         return res;
     }
 };
-int main()
-{
-}
+
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+        int n = nums.size();
+        int RemCnt[k];
+        memset(RemCnt,0,sizeof(RemCnt));
+        RemCnt[0] = 1;
+        int cnt = 0 , rem = 0;
+        for(auto &a : nums){
+            rem = (rem + a%k + k)%k;
+            cnt += RemCnt[rem]++;
+        }
+        return cnt;
+    }
+};
