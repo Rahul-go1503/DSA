@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// https://www.geeksforgeeks.org/prime-numbers/
 /*
 TC- O(sqrt(n))
 all primes greater than 3 are of the form 6k ± 1, where k is any integer greater than 0.

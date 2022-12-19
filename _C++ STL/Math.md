@@ -39,3 +39,6 @@ Prime No - A prime is a natural number greater than 1 that has no positive divis
 
 ## ceil() and floor() dont work for int data type 
 eq - ceil(3/2) = 1 ; ceil(3.0/2) = 2; 
+
+# Prime Numbers
+https://www.geeksforgeeks.org/prime-numbers/
