@@ -5,7 +5,7 @@ vector<int> dir={-1 -1 1 1 -1 0 1 0 -1};
 
 INT_MAX
 LONG_MAX
-LLOng_MAX
+LLONG_MAX
 
 
 Question: Can you explain how did u determine the potential swap distance?

@@ -25,6 +25,9 @@ Operators:
 Operator Precedence:
 */% 
 +-
+</<=
+>/>=
+==,!=  
 & > ^ > |
 && > || > =
 *****

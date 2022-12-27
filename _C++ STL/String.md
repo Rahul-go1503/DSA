@@ -67,3 +67,8 @@ int main()
 > StringStream
 https://www.geeksforgeeks.org/stringstream-c-applications/
 https://www.simplilearn.com/tutorials/cpp-tutorial/string-stream-in-cpp
+
+# Note
+<!-- a = a + "xy" is O(N) while a += "xy" is O(1) (amortized).
+a = a + "xy" creates a copy of a, appends "xy" and then assigns it back to a.
+a += "xy" just appends "xy" to a. -->

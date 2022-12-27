@@ -38,7 +38,7 @@ int main(){
 
 begin() and end() function return an iterator(like a pointer) initialized to the first or the last element of the container that can be used to iterate through the collection, while front() and back() function just return a reference to the first or the last element of the container.
 
-
+return type - itr
 upper_bound :
 Returns an iterator pointing to the first element in the range [first,last) which compares greater than val.
 // less than hai less than hai...... equal hai equal hai.... are ye to badi hai return krdo
@@ -47,7 +47,7 @@ Returns an iterator pointing to the first element in the range [first,last) whic
 lower_bound :
 Returns an iterator pointing to the first element in the range [first,last) which does not compare less than val.
 
-// less than hai less than hai.... are ye to eqaul hai return krdo
+// less than hai less than hai.... are ye to eqaul hai return krdo... agar equal nhi hai to bdi value return krdo... bdi nhi to end itr return krdo
 
 eq.
 10 10 10 20 20 20 30 30
