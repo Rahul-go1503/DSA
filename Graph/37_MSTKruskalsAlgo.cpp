@@ -21,8 +21,8 @@ public:
         int pu = findUPar(u) , pv = findUPar(v);
         if(pu==pv) return;
 
-        if(size[pu]<size[pv]) parent[pu] = pv;
-        else parent[pv] = pu;
+        if(size[pu]<size[pv]) parent[pu] = pv, size[pv] += size[pu];
+        else parent[pv] = pu, size[pu] += size[pv];
     }
 };
 

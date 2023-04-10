@@ -9,12 +9,12 @@ Notes :
 #include <bits/stdc++.h>
 using namespace std;
 
-# define mod 1000000007
+const int mod = 1000000007;
 int numberOfWays(int n, int k) {
-    int prev2 = k;
-    int prev1 = (k*k)%mod;
+    if(n==1) return k;
+    long long prev2 = k, prev1 = (k*k)%mod;
     for(int i=3;i<=n;i++){
-        int curr = ((k-1)*1LL*(prev1%mod+prev2%mod)%mod)%mod;
+        int curr = ((k-1)*(prev1+prev2)%mod)%mod;
         prev2=prev1;
         prev1=curr;
     }

@@ -1,26 +1,14 @@
-/*********************************************************************************************
+#include <bits/stdc++.h>
+using namespace std;
 
-Question :
-
-
-Notes :
+/*
 Reading the question we understand that we need every possible unique combination such that sum of the 
 combination is equal to target.
 
 For such questions where we have to find "every possible" we generally use backtracking.
-**********************************************************************************************/
-
-/*
-	Time Complexity: O()
-	Space Complexity: O()
-
-	Where 'N' is the total number of elements in the array.
 */
 
-
-#include <bits/stdc++.h>
-using namespace std;
-
+// Backtracking
 class Solution {
     void solve(vector<int>& can, int tar,int j,vector<int> &temp,vector<vector<int>> &ans){
         if(tar==0){

@@ -73,6 +73,9 @@ A.insert(A.begin(),1);
  initially a vector has a size of 1 everytime we pushback and the vector runs out of space it creates a new vector of double the previous size and copies all the previous elements to it and pushes the new element to the new vector this is very expensive so its better to preallocate memory to vector whenever possible
 
 reverse vector of vector :
+
+# have a look
+In fact, vector<bool> is not a STL container. You should avoid to use it. You can also get the knowledge from http://stackoverflow.com/questions/17794569/why-is-vectorbool-not-a-stl-container and http://stackoverflow.com/questions/670308/alternative-to-vectorbool
  
 
 

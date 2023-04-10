@@ -21,7 +21,7 @@ using namespace std;
 vector<int> rotateArray(vector<int> &A, int B) {
 	vector<int> ret; 
 	for (int i = 0; i < A.size(); i++) {
-		ret.push_back(A[(i + B)%A.size()]);
+		ret.push_back(A[(i + B)%A.size()]); // left rotate
 	}
 	return ret; 
 }

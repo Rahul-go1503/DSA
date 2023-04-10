@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-// we cans solve by backtrack onlt is n is small else it is a dp question( 0/1 knapsack)
+// we cans solve by backtrack only if n is small else it is a dp question( 0/1 knapsack)
 class Solution{
     int solve(int i, int n, int *arr,int sum,int total){
         if(i==n && sum==total){
@@ -24,7 +24,7 @@ public:
         return solve(0,N,arr,0,sum/2);
     }
 };
-// getting tle on leetcode .. excepeted on gfg (:
+// getting tle on leetcode .. Accepted on gfg (:
 class Solution {
     bool solve(int i, int tar, vector<int> &nums){
         if(tar == 0) return true;

@@ -4,21 +4,19 @@ using namespace std;
 class Solution
 {
     void dfs(int u, vector<int> &vis, vector<int> adj[], stack<int> &st){
-        if(vis[u]) return;
         vis[u] = 1;
-        
+
         for(auto &v : adj[u]){
-            dfs(v,vis,adj,st);
+            if(!vis[v]) dfs(v,vis,adj,st);
         }
-        st.push(u);
+        st.push(u); // storing vertex in decreasing order of their finishing time
     }
     
     void sccCount(int u, vector<int> &vis, vector<int> adj[]){
-        if(vis[u]) return;
         vis[u] = 1;
         
         for(auto &v : adj[u]){
-            sccCount(v,vis,adj);
+            if(!vis[v]) sccCount(v,vis,adj);
         }
     }
 	public:

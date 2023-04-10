@@ -23,6 +23,7 @@ long long int countDerangements(int n) {
     long long int prev1 = 1;
     for(int i=3;i<=n;i++){
         long long int curr = ((i-1)*(((prev2%mod) + (prev1%mod))%mod))%mod;
+        long long int curr = (prev2%mod + prev1%mod)%mod*(i-1)%mod;
         //long long int curr = (i-1)*(prev2+prev1);
         prev2=prev1;
         prev1 = curr;

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*
-    a.b : a is class b is method ;
+    a.b : a is class, b is method ;
     a-> : a is pointer to a class (*a).b
 */
 

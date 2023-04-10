@@ -1,6 +1,41 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+class Solution {
+    int t = 1;
+    void dfs(int u, int par, vi &vis, vi &dis, vi &low, vi adj[], vvi &bridges){
+        vis[u] = 1;
+        dis[u] = low[u] = t++;
+        for(auto &v : adj[u]){
+            if(!vis[v]){
+                dfs(v,u,vis,dis,low,adj,bridges);
+
+                low[u] = min(low[u],low[v]);
+                if(low[v] > dis[u]) bridges.push_back({u,v});
+            }
+            else if(v!=par) low[u] = min(low[u],low[v]);
+        }
+    }
+public:
+    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& edges) {
+        vi vis(n), dis(n), low(n);
+        vector<int> adj[n];
+
+        for(auto &ed : edges){
+            adj[ed[0]].push_back(ed[1]);
+            adj[ed[1]].push_back(ed[0]);
+        }
+
+        vvi bridges;
+        dfs(0,-1,vis,dis,low,adj,bridges);
+        return bridges;
+    }
+};
+
+
+
 class Solution {
     // TC - O(V+2E)
     void dfs(int u,int par,int step, vector<int> &vis, vector<int> adj[], vector<int> &steps, vector<int> &low,vector<vector<int>> & briges){

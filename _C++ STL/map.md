@@ -44,7 +44,7 @@ int main(){
 }
 
 # unordered_map
-
+> unordered_map use hash table, which does not support random access. iterator+randomIndex wont' work for unordered_map.
 >count : count the no of keys present in map
 Parameters: This function accepts a single parameter key which is needed to be checked in the given unordered_map container.
 Return Value: This function returns 1(coz map store distinct values) if there exists a value in the map with the given key, otherwise it returns 0.

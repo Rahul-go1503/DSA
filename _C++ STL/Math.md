@@ -45,3 +45,6 @@ eq - ceil(3/2) = 1 ; ceil(3.0/2) = 2;
 
 # Prime Numbers
 https://www.geeksforgeeks.org/prime-numbers/
+
+# BIT manipulation
+https://www.hackerearth.com/practice/basic-programming/bit-manipulation/basics-of-bit-manipulation/tutorial/

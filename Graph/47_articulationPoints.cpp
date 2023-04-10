@@ -1,6 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef vector<int> vi;
+class Solution {
+    int t = 1;
+    void dfs(int u, int par, vi &vis, vi &dis, vi &low, vi &mark, vi adj[]){
+        vis[u] = 1;
+        dis[u] = low[u] = t++;
+        
+        int child = 0;
+        for(auto &v : adj[u]){
+            if(!vis[v]){
+                child++;
+                dfs(v,u,vis,dis,low,mark,adj);
+                
+                low[u] = min(low[u],low[v]);
+                if(par !=-1 && low[v]>=dis[u]) mark[u] = 1;
+            }
+            else if(v!=par) low[u] = min(low[u],dis[v]);
+        }
+        
+        if(par==-1 && child>1) mark[u] = 1;
+    }
+  public:
+    vector<int> articulationPoints(int V, vector<int>adj[]) {
+        vi vis(V), dis(V), low(V), mark(V),ap;
+        
+        for(int i=0;i<V;i++){
+            if(!vis[i]) dfs(i,-1,vis,dis,low,mark,adj);
+        }
+        
+        for(int i=0;i<V;i++){
+            if(mark[i]) ap.push_back(i);
+        }
+        if(ap.size()==0) return {-1};
+        return ap;
+    }
+};
+
+
 class Solution {
     void dfs(int u, int par, int timer, int vis[],vector<int> adj[], int tin[], int low[], set<int> &st){
         vis[u] = 1;

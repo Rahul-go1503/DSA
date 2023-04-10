@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*********************************************************************************************
-
-Question :
+ * 
+ * for LdS multiply each element with -1;
 
 **********************************************************************************************/
 
@@ -41,5 +41,24 @@ public:
             }
         }
         return sub.size();
+    }
+};
+// https://leetcode.com/problems/longest-increasing-subsequence/solutions/1326308/
+// c-python-dp-binary-search-bit-segment-tree-solutions-picture-explain-o-nlogn/?orderBy=most_votes
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        int len = 1;
+        vector<int> tail;
+        tail.push_back(nums[0]);
+        for(int i=1;i<n;i++){
+            if(nums[i]>tail.back()) tail.push_back(nums[i]),len++;
+            else{
+                int lo = lower_bound(tail.begin(),tail.end(),nums[i]) - tail.begin();
+                tail[lo] = nums[i];
+            }
+        }
+        return len;
     }
 };

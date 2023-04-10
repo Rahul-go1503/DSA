@@ -1,17 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*********************************************************************************************
-
-Question :
-
-
-Notes :
-
-**********************************************************************************************/
-/*
-	Time Complexity: O(2^n)
-	Space Complexity: O()
-*/
+// bit TC - O(N*2^N)
+vector<string> subsequences(string str){
+    vector<string> ans;
+    int sz = str.length();
+    for(int i=1;i<pow(2,sz);i++){
+        int j = 0,n=i;
+        string s;
+        while(n){
+            if(n&1) s.push_back(str[j]);
+            n >>= 1;
+            j++;
+        }
+        ans.push_back(s);
+    }
+    return ans;
+}
 
 void subsequences(string str,string sub , vector<string> &ans, int idx= 0 ){
     if(!sub.empty()) ans.push_back(sub);    // not taken
@@ -25,7 +29,7 @@ vector<string> subsequences(string str){
     return ans;
 }
 
-
+// 2^N
 void subsequences2(string str,string sub , vector<string> &ans, int idx= 0 ){
     if(idx==str.length()){
         if(!sub.empty()) ans.push_back(sub);
