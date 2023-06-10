@@ -23,3 +23,9 @@ https://leetcode.com/problems/validate-binary-search-tree/discuss/32112/Learn-on
 
 # Fenwick tree or binary index tree
 - love babbar video
+- https://youtu.be/uSFzHCZ4E-8
+
+
+# Tree Revision
+
+Inorder Traversal

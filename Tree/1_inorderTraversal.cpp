@@ -15,6 +15,27 @@ struct TreeNode {
 
 // Day_10
 class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int>ans;
+        stack<TreeNode*> st;
+        while(root || st.size()){
+            if(root){
+                st.push(root);
+                root = root->left;
+            }
+            else{
+                root = st.top();
+                st.pop();
+                ans.push_back(root->val);
+                root = root->right;
+            }
+        }
+        return ans;
+    }
+};
+
+class Solution {
     void solve(TreeNode* root , vector<int> &ans){
         if(!root) return ;
         solve(root->left,ans);

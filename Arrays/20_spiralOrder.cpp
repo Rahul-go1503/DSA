@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 class Solution {
-    //Array -- not solved
+    //Array --  solved
 void solve(vector<vector<int>> &m,vector<int>&ans,int rs,int re,int cs,int ce){
     if(rs>re || cs>ce) return;
     for(int i=cs;i<=ce;i++){
@@ -36,5 +36,38 @@ public:
         vector<int> ans;
         solve(matrix,ans,rs,re,cs,ce);
         return ans;
+    }
+};
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& mat) {
+        int top = 0, down = mat.size();
+        int left = 0, right = mat[0].size();
+
+        int d = 0,k=0;
+
+        vector<int> res(down*right);
+        down--,right--;
+        while(top<=down && left<=right){
+            if(d==0){
+                for(int i = left;i<=right;i++) res[k++] = mat[top][i];
+                top++;
+            }
+            else if(d==1){
+                for(int i = top;i<=down;i++) res[k++] = mat[i][right];
+                right--;
+            }
+            else if(d==2){
+                for(int i = right;i>=left;i--) res[k++] = mat[down][i];
+                down--;
+            }else{
+                for(int i = down;i>=top;i--) res[k++] = mat[i][left];
+                left++;
+            }
+
+            d = (d+1)%4;
+        }
+        return res;
     }
 };
