@@ -2,7 +2,8 @@
 using namespace std;
 
 /*
-TopoSort excludes not only those nodes that are in a cycle, but also those nodes that have an outgoing edge to the cycle, and this node must be removed as well because it leads to a non-terminal node (ie. a cycle).
+TopoSort excludes not only those nodes that are in a cycle, but also those nodes that have an outgoing edge to the cycle, and this node must be 
+removed as well because it leads to a non-terminal node (ie. a cycle).
 */
 
 class Solution

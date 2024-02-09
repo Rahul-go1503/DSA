@@ -57,3 +57,8 @@ Return values: If the given key exists in unordered_map it returns an iterator t
 
 > m.count and m[] are duplicated operations. replacing it with an iterator can save half of the map operations.
  Both m.count(n) and m[n] search the key n in unordered_map<int, int> m. In ans.push_back(m.count(m) ? m[n] : -1), we search the key n twice, once to see if it's in m and again to get it's value. Since the time complexity of search operations on an unordered_map is O(1), it doesn't have a big impact on performance, but nevertheless, we want to cut corners where we can. Also, on containers like map or set, search operations are not O(1). By using unordered_map<int, int>::find and iterators, we can reference it right away once we find it instead of doing another search for the key.
+
+
+ unordered_map<string,map<int,string>> mp;
+ prev(itr);
+ map: itr--;
